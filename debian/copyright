@@ -1,0 +1,14 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: spectra
+Upstream-Contact: yixuan
+Source: https://github.com/yixuan/spectra/archive/
+Debianized-By: Julien Schueller <schueller@phimeca.com>
+Debianized-Date: Sat, 22 Nov 2014 18:12:15 +0100.
+
+Files: *
+Copyright: Copyright (C) 2015-2019 Yixuan Qiu
+License: MPL-2
+
+Files: debian/*
+Copyright: 2020 Julien Schueller
+License: BSD

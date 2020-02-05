@@ -1,0 +1,19 @@
+Source: spectra
+Section: science
+Priority: extra
+Maintainer: Debian Science Maintainers <debian-science-maintainers@lists.alioth.debian.org>
+Uploaders: Julien Schueller <schueller@phimeca.com>, Denis Barbier <barbier@debian.org>
+Build-Depends: debhelper (>= 8), quilt, cmake, libeigen3-dev
+Standards-Version: 3.9.6
+Homepage: https://spectralib.org/
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=debian-science/packages/spectra.git
+Vcs-Git: git://anonscm.debian.org/debian-science/packages/spectra.git -b debian/experimental
+
+Package: libspectra-dev
+Section: libdevel
+Architecture: all
+Depends: ${misc:Depends}, libeigen3-dev
+Description: headers and development libraries for Spectra
+ C++ Library For Large Scale Eigenvalue Problems.
+
+

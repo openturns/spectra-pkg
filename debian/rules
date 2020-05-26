@@ -1,24 +1,8 @@
 #!/usr/bin/make -f
 
-ifeq ($(findstring parallel=,$(DEB_BUILD_OPTIONS)),)
-	export DEB_BUILD_OPTIONS+=parallel=$(shell getconf _NPROCESSORS_ONLN)
-endif
-$(info DEB_BUILD_OPTIONS:$(origin DEB_BUILD_OPTIONS)=$(DEB_BUILD_OPTIONS))
-
-cppflags := $(shell dpkg-buildflags --get CPPFLAGS)
-cflags := $(shell dpkg-buildflags --get CFLAGS) $(cppflags)
-cxxflags := $(shell dpkg-buildflags --get CXXFLAGS) $(cppflags) -Wno-error
-ldflags := $(shell dpkg-buildflags --get LDFLAGS)
-ldflags += -Wl,--as-needed
-
-# Explicitly set builddir directory
-builddir := obj-$(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
-
-
 %:
-	dh $@
+	dh $@ --buildsystem=cmake
 
 override_dh_auto_install:
-	mkdir -p $(CURDIR)/debian/tmp/usr/include
-	cp -rv include/Spectra $(CURDIR)/debian/tmp/usr/include
+	dh_auto_install --destdir=$(CURDIR)/debian/tmp/
 

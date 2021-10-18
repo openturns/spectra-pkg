@@ -14,7 +14,7 @@ FFLAGS="${FFLAGS:-%optflags}" ; export FFLAGS ; \
 -DBUILD_SHARED_LIBS:BOOL=ON
 
 Name:           spectra
-Version:        0.9.0
+Version:        1.0.0
 Release:        1%{?dist}
 Summary:        C++ Library For Large Scale Eigenvalue Problems
 Group:          System Environment/Libraries
@@ -54,8 +54,8 @@ rm -rf %{buildroot}
 %files devel
 %defattr(-,root,root,-)
 %{_includedir}/Spectra/
-%{_prefix}/cmake/
+%{_prefix}/share/spectra/
 
 %changelog
-* Wed Feb 5 2020 Julien Schueller <schueller at phimeca dot com> 0.8.1-1
+* Fri Oct 15 2021 Julien Schueller <schueller at phimeca dot com> 1.0.0-1
 - Initial package creation
